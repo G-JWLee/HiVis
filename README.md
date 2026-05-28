@@ -33,7 +33,7 @@ python examples/data_preprocess/new_preprocess_scalecua_progress_summary_annotat
 python examples/data_preprocess/new_scalecua_summary_sft_llama_factory.py --local_dir ./benchmarks/scalecua_summary_annotation --summary_annotation ./benchmarks/scalecua_summary_annotation/sequential_summary_annotation.jsonl --tokenizer_path Qwen/Qwen3-VL-8B-Thinking --max_prompt_length 16384
 ```
 
-For Visually Grounded Error Analysis, run
+For Visually Grounded Error Analysis, run <br>
 Step 1. State-transition Extraction
 ```shell
 python examples/data_preprocess/new_preprocess_scalecua_state_transition_extraction.py --local_dir ./benchmarks/scalecua_state_transition_extraction
