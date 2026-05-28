@@ -62,7 +62,7 @@ Download our PRInTS from huggingface:
 
 | Model | Download Link |
 |-------|---------------|
-| **PRInTS** | [![Hugging Face](https://img.shields.io/badge/🤗-HiVis-critic-yellow.svg)](https://huggingface.co/Jaew00Lee/HiVis-critic) |
+| **HiVis-critic** | [![Hugging Face](https://img.shields.io/badge/🤗-HiVis%20Critic-blue)](https://huggingface.co/Jaew00Lee/HiVis-critic) |
 
 
 ## Training
