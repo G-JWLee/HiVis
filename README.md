@@ -1,5 +1,3 @@
-# A History-Aware Visually Grounded Critic for Computer Use Agents
-
 # [A History-Aware Visually Grounded Critic for Computer Use Agents](TBD)
 
 [![Paper](https://img.shields.io/badge/Paper-arXiv-red)](TBD)
