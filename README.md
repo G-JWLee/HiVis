@@ -40,23 +40,23 @@ python examples/data_preprocess/new_preprocess_scalecua_state_transition_extract
 Step 2. Plausible Error Synthesis
 ```shell
 python examples/data_preprocess/new_preprocess_scalecua_negative_action_generation.py --state_transition_annotation ./benchmarks/scalecua_state_transition_extraction/state_transition_annotation.jsonl --save_dir ./benchmarks/new_scalecua_preference
-python examples/data_preprocess/new_preprocess_scalecua_negative_action_filtering.py --local_dir /nas-ssd2/jwoolee/code/verl_vl/benchmarks/new_scalecua_preference
+python examples/data_preprocess/new_preprocess_scalecua_negative_action_filtering.py --local_dir ./benchmarks/new_scalecua_preference
 ```
 
 Step 3. Multimodal Rationale Extraction
 ```shell
-python examples/data_preprocess/new_preprocess_scalecua_critic_chosen_dataset_grounding_new.py --annotation_dir /nas-ssd2/jwoolee/code/verl_vl/benchmarks/new_scalecua_preference --local_dir /nas-ssd2/jwoolee/code/verl_vl/benchmarks/new_scalecua_critic_fixed
-python examples/data_preprocess/new_preprocess_scalecua_critic_chosen_dataset_grounding_new_no_verbal.py --annotation_dir /nas-ssd2/jwoolee/code/verl_vl/benchmarks/new_scalecua_preference --local_dir /nas-ssd2/jwoolee/code/verl_vl/benchmarks/new_scalecua_critic_fixed
+python examples/data_preprocess/new_preprocess_scalecua_critic_chosen_dataset_grounding_new.py --annotation_dir ./benchmarks/new_scalecua_preference --local_dir ./benchmarks/new_scalecua_critic_fixed
+python examples/data_preprocess/new_preprocess_scalecua_critic_chosen_dataset_grounding_new_no_verbal.py --annotation_dir ./benchmarks/new_scalecua_preference --local_dir ./benchmarks/new_scalecua_critic_fixed
 
-python examples/data_preprocess/new_preprocess_scalecua_critic_rejected_dataset_grounding_new.py --annotation_dir /nas-ssd2/jwoolee/code/verl_vl/benchmarks/new_scalecua_preference --local_dir /nas-ssd2/jwoolee/code/verl_vl/benchmarks/new_scalecua_critic_fixed
-python examples/data_preprocess/new_preprocess_scalecua_critic_rejected_dataset_grounding_new_no_verbal.py --annotation_dir /nas-ssd2/jwoolee/code/verl_vl/benchmarks/new_scalecua_preference --local_dir /nas-ssd2/jwoolee/code/verl_vl/benchmarks/new_scalecua_critic_fixed
+python examples/data_preprocess/new_preprocess_scalecua_critic_rejected_dataset_grounding_new.py --annotation_dir ./benchmarks/new_scalecua_preference --local_dir ./benchmarks/new_scalecua_critic_fixed
+python examples/data_preprocess/new_preprocess_scalecua_critic_rejected_dataset_grounding_new_no_verbal.py --annotation_dir ./benchmarks/new_scalecua_preference --local_dir ./benchmarks/new_scalecua_critic_fixed
 
 python examples/data_preprocess/new_preprocess_scalecua_merge_data.py
 python examples/data_preprocess/new_scalecua_critique_sft_llama_factory.py --local_dir ./benchmarks/new_scalecua_critic_fixed --chosen_annotation ./benchmarks/new_scalecua_critic_fixed/critic_chosen_dataset.jsonl --rejected_annotation ./benchmarks/new_scalecua_critic_fixed/critic_rejected_dataset.jsonl --tokenizer_path Qwen/Qwen3-VL-8B-Thinking --max_prompt_length 16384
 ```
 
 ## Download Models
-Download our PRInTS from huggingface:
+Download our HiVis from huggingface:
 
 | Model | Download Link |
 |-------|---------------|
@@ -72,6 +72,8 @@ llamafactory-cli train examples/train_full/qwen3vl_full_sft_critic_merged.yaml
 ## Evaluation
 For evaluation we use the [ScaleCUA](https://github.com/OpenGVLab/ScaleCUA) evaluation pipeline.
 
+## Acknowledgements
+We acknowledge the **ScaleCUA** project for providing the evaluation pipeline and the GUI trajectories corpus.
 
 ## Bibtex
 ```
